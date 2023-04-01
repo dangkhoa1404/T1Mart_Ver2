@@ -4,25 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity"
-    android:background="@color/white">
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpT1Mart"
+    android:background="@color/white"
+    tools:context=".ui.main.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/flMart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/tlT1Mart"/>
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tlT1Mart"
+        android:layout_above="@+id/navigationMart" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationMart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:tabBackground="@drawable/custom_tablayout"
-        app:tabGravity="fill"
-        app:tabIndicatorAnimationMode="elastic"
-        app:tabIndicatorHeight="@dimen/size_0"
-        app:tabInlineLabel="true"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/red"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation" />
 </RelativeLayout>

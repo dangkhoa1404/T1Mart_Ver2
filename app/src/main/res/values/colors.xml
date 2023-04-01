@@ -9,4 +9,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#C80D0D</color>
+    <color name="textview_focused">#F1F1F1</color>
 </resources>
