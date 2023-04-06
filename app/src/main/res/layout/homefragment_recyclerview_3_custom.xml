@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="@dimen/layout_150"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginHorizontal="@dimen/padmar_5"
+    android:layout_marginVertical="@dimen/padmar_10"
+    android:background="@drawable/home_recyclerview2_custom"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_150"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="@dimen/padmar_5"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_rv3_img_logitech" />
+
+    <TextView
+        android:id="@+id/tvDesProduct"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padmar_90"
+        android:layout_marginHorizontal="@dimen/padmar_5"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/recyclerviewc_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_16" />
+
+    <ImageView
+        android:id="@+id/imgBrandProduct"
+        android:layout_width="@dimen/padmar_90"
+        android:layout_height="@dimen/padmar_40"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="@dimen/padmar_a110"
+        android:background="@drawable/home_recyclerview2_custom"
+        android:padding="@dimen/padmar_5"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_rv3_logo_logitech" />
+
+</LinearLayout>

@@ -16,6 +16,7 @@ import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.FragmentHomeBinding
 import com.example.t1mart.ui.main.home.adapter.RecyclerView1Adapter
 import com.example.t1mart.ui.main.home.adapter.RecyclerView2Adapter
+import com.example.t1mart.ui.main.home.adapter.RecyclerView3Adapter
 import com.example.t1mart.ui.main.home.adapter.ViewPagerAdapter
 import kotlin.math.abs
 
@@ -24,6 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var promotionArrayList: ArrayList<T1mart>
     private lateinit var imagePromotion: Array<Int>
     private lateinit var titlePromotion: Array<String>
+    private lateinit var imageBrand: Array<Int>
 
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
@@ -42,6 +44,7 @@ class HomeFragment : Fragment() {
         setDataRecyclerView1()
         setDataImageSlider()
         setDataRecyclerView2()
+        setDataRecyclerView3()
     }
 
     private fun setDataRecyclerView1() {
@@ -65,7 +68,7 @@ class HomeFragment : Fragment() {
         )
         promotionArrayList = arrayListOf()
         for (i in imagePromotion.indices) {
-            val promotion = T1mart(imagePromotion[i], titlePromotion[i])
+            val promotion = T1mart(imagePromotion[i], titlePromotion[i], 0)
             promotionArrayList.add(promotion)
         }
         binding.run {
@@ -134,11 +137,46 @@ class HomeFragment : Fragment() {
         )
         promotionArrayList = arrayListOf()
         for (i in imagePromotion.indices) {
-            val promotion = T1mart(imagePromotion[i], titlePromotion[i])
+            val promotion = T1mart(imagePromotion[i], titlePromotion[i], 0)
             promotionArrayList.add(promotion)
         }
         binding.run {
             homeRecyclerview2.adapter = RecyclerView2Adapter(promotionArrayList)
+        }
+    }
+
+    private fun setDataRecyclerView3() {
+        imagePromotion = arrayOf(
+            R.drawable.ic_rv3_img_logitech,
+            R.drawable.ic_rv3_img_nhanam,
+            R.drawable.ic_rv2_tv,
+            R.drawable.ic_rv3_img_strongbow,
+            R.drawable.ic_rv3_img_sunhouse,
+            R.drawable.ic_rv3_img_unilever
+        )
+        titlePromotion = arrayOf(
+            "Chuột phím sale đến 50%",
+            "Ưu đãi sách hot đến 50%",
+            "Mua Tivi giảm đến 50%",
+            "Thưởng thức Strongbow 4 vị",
+            "Giảm đến 50%",
+            "Bùng cháy triệu Deal",
+        )
+        imageBrand = arrayOf(
+            R.drawable.ic_rv3_logo_logitech,
+            R.drawable.ic_rv3_logo_nhanam,
+            R.drawable.ic_rv3_logo_samsung,
+            R.drawable.ic_rv3_logo_strongbow,
+            R.drawable.ic_rv3_logo_sunhouse,
+            R.drawable.ic_rv3_logo_unilever,
+        )
+        promotionArrayList = arrayListOf()
+        for (i in imagePromotion.indices) {
+            val promotion = T1mart(imagePromotion[i], titlePromotion[i], imageBrand[i])
+            promotionArrayList.add(promotion)
+        }
+        binding.run {
+            homeRecyclerview3.adapter = RecyclerView3Adapter(promotionArrayList)
         }
     }
 

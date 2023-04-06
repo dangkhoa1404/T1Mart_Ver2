@@ -15,4 +15,6 @@
     <color name="home_rv2_color1">#3C88FF</color>
     <color name="home_rv2_color2">#0047CA</color>
     <color name="home_rv2_color3">#f1fb00</color>
+    <color name="home_rv3_color1">#dfe7fc</color>
+    <color name="home_rv3_color2">#CBDAFF</color>
 </resources>

@@ -94,6 +94,33 @@
                     tools:listitem="@layout/homefragment_recyclerview_2_custom" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@drawable/home_recyclerview3_custom"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/padmar_15">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padmar_10"
+                    android:text="@string/rv2_textview_title_2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_20"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/homefragment_recyclerview_3_custom" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

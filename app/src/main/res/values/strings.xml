@@ -9,4 +9,5 @@
     <string name="recyclerviewc_content">XảkhoNGON</string>
     <string name="rv2_textview_content">Rẻ mỗi ngày</string>
     <string name="rv2_textview_title">Bộ Sưu tập nổi bật</string>
+    <string name="rv2_textview_title_2">Thương hiệu chính hãng</string>
 </resources>

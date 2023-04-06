@@ -10,6 +10,7 @@
     <!--    padding, margin-->
     <dimen name="padmar_a50">-50dp</dimen>
     <dimen name="padmar_a75">-75dp</dimen>
+    <dimen name="padmar_a110">-110dp</dimen>
     <dimen name="padmar_5">5dp</dimen>
     <dimen name="padmar_10">10dp</dimen>
     <dimen name="padmar_15">15dp</dimen>
