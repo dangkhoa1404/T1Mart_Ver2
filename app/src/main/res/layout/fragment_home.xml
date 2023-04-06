@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.main.home.HomeFragment">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/llSearchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padmar_20">
+
+        <EditText
+            android:id="@+id/edtSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imgCart"
+            android:background="@drawable/edittext_custom"
+            android:drawableStart="@drawable/ic_search"
+            android:hint="@string/hint_editText"
+            android:inputType="none"
+            android:paddingHorizontal="@dimen/padmar_15"
+            android:paddingVertical="@dimen/size_10"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/imgCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padmar_10"
+            android:src="@drawable/ic_cart" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/svMart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="CL" />
+        android:background="@color/white"
+        android:scrollbars="none">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_recyclerview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/homefragment_recyclerview_1_custom" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpCombo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_200"
+                android:layout_gravity="center"
+                android:paddingHorizontal="@dimen/padmar_30" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

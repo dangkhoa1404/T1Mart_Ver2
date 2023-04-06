@@ -9,5 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#C80D0D</color>
-    <color name="textview_focused">#F1F1F1</color>
+    <color name="icon">#585858</color>
+    <color name="stroke_edittext">#e0e0e0</color>
+    <color name="bg_scrollView">#f6f5fa</color>
 </resources>
