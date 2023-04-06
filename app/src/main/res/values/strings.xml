@@ -7,4 +7,6 @@
     <string name="information">User</string>
     <string name="hint_editText">Tìm thông tin sản phẩm</string>
     <string name="recyclerviewc_content">XảkhoNGON</string>
+    <string name="rv2_textview_content">Rẻ mỗi ngày</string>
+    <string name="rv2_textview_title">Bộ Sưu tập nổi bật</string>
 </resources>

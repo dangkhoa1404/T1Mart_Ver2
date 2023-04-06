@@ -12,4 +12,7 @@
     <color name="icon">#585858</color>
     <color name="stroke_edittext">#e0e0e0</color>
     <color name="bg_scrollView">#f6f5fa</color>
+    <color name="home_rv2_color1">#3C88FF</color>
+    <color name="home_rv2_color2">#0047CA</color>
+    <color name="home_rv2_color3">#f1fb00</color>
 </resources>

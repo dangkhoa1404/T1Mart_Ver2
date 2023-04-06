@@ -4,7 +4,8 @@
     android:layout_width="@dimen/padmar_70"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_margin="@dimen/padmar_10"
+    android:layout_marginHorizontal="@dimen/padmar_5"
+    android:layout_marginVertical="@dimen/padmar_10"
     android:orientation="vertical">
 
     <ImageView

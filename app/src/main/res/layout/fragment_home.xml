@@ -41,7 +41,7 @@
         android:id="@+id/svMart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/bg_scrollView"
         android:scrollbars="none">
 
         <LinearLayout
@@ -50,7 +50,7 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/home_recyclerview1"
+                android:id="@+id/homeRecyclerview1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -63,7 +63,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/layout_200"
                 android:layout_gravity="center"
-                android:paddingHorizontal="@dimen/padmar_30" />
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/padmar_30"
+                android:paddingVertical="@dimen/padmar_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/padmar_15">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padmar_10"
+                    android:text="@string/rv2_textview_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_20"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/homefragment_recyclerview_2_custom" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

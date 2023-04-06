@@ -15,6 +15,7 @@ import com.example.t1mart.R
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.FragmentHomeBinding
 import com.example.t1mart.ui.main.home.adapter.RecyclerView1Adapter
+import com.example.t1mart.ui.main.home.adapter.RecyclerView2Adapter
 import com.example.t1mart.ui.main.home.adapter.ViewPagerAdapter
 import kotlin.math.abs
 
@@ -40,6 +41,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setDataRecyclerView1()
         setDataImageSlider()
+        setDataRecyclerView2()
     }
 
     private fun setDataRecyclerView1() {
@@ -70,6 +72,7 @@ class HomeFragment : Fragment() {
             homeRecyclerview1.adapter = RecyclerView1Adapter(promotionArrayList)
         }
     }
+
 
     private fun setDataImageSlider() {
         binding.run {
@@ -110,6 +113,35 @@ class HomeFragment : Fragment() {
         viewPager2.currentItem = viewPager2.currentItem + 1
     }
 
+    private fun setDataRecyclerView2() {
+        imagePromotion = arrayOf(
+            R.drawable.ic_rv2_coffeecan,
+            R.drawable.ic_rv2_laptop,
+            R.drawable.ic_rv2_headphone,
+            R.drawable.ic_rv2_phone,
+            R.drawable.ic_rv2_shampoo,
+            R.drawable.ic_rv2_chocopie,
+            R.drawable.ic_rv2_tv,
+        )
+        titlePromotion = arrayOf(
+            "Top bán chạy",
+            "Mua nhiều giảm sâu",
+            "Giao nhanh 2h",
+            "Mua 1 được 2",
+            "Chốt Deal Sale Hot",
+            "Top Deal tiêu dùng",
+            "Săn Deal HomeTech"
+        )
+        promotionArrayList = arrayListOf()
+        for (i in imagePromotion.indices) {
+            val promotion = T1mart(imagePromotion[i], titlePromotion[i])
+            promotionArrayList.add(promotion)
+        }
+        binding.run {
+            homeRecyclerview2.adapter = RecyclerView2Adapter(promotionArrayList)
+        }
+    }
+
     override fun onPause() {
         super.onPause()
         handler.removeCallbacks(runnable)
@@ -119,5 +151,4 @@ class HomeFragment : Fragment() {
         super.onResume()
         handler.postDelayed(runnable, 3000)
     }
-
 }
