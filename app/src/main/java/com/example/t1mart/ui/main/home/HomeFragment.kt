@@ -83,10 +83,12 @@ class HomeFragment : Fragment() {
             handler = Handler(Looper.myLooper()!!)
             imageListCombo = ArrayList()
 
-            imageListCombo.add(R.drawable.img_combo1)
-            imageListCombo.add(R.drawable.img_combo2)
-            imageListCombo.add(R.drawable.img_combo3)
-            imageListCombo.add(R.drawable.img_combo4)
+            imageListCombo.add(R.drawable.img_banner1)
+            imageListCombo.add(R.drawable.img_banner2)
+            imageListCombo.add(R.drawable.img_banner3)
+            imageListCombo.add(R.drawable.img_banner4)
+            imageListCombo.add(R.drawable.img_banner5)
+            imageListCombo.add(R.drawable.img_banner6)
 
             adapter = ViewPagerAdapter(imageListCombo, viewPager2)
 
@@ -107,7 +109,7 @@ class HomeFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 handler.removeCallbacks(runnable)
-                handler.postDelayed(runnable, 2000)
+                handler.postDelayed(runnable, 2500)
             }
         })
     }

@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import com.example.t1mart.R
 import com.example.t1mart.databinding.ActivityMainBinding
 import com.example.t1mart.ui.main.home.HomeFragment
-import com.example.t1mart.ui.main.information.InformationFragment
-import com.example.t1mart.ui.main.mall.MallFragment
+import com.example.t1mart.ui.main.account.AccountFragment
+import com.example.t1mart.ui.main.category.CategoryFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         binding.navigationMart.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
-                R.id.mall -> replaceFragment(MallFragment())
-                R.id.account -> replaceFragment(InformationFragment())
+                R.id.mall -> replaceFragment(CategoryFragment())
+                R.id.account -> replaceFragment(AccountFragment())
             }
             true
         }

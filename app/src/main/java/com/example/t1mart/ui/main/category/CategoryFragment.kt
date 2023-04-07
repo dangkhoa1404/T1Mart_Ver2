@@ -1,19 +1,19 @@
-package com.example.t1mart.ui.main.information
+package com.example.t1mart.ui.main.category
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.t1mart.databinding.FragmentInformationBinding
+import com.example.t1mart.databinding.FragmentMallBinding
 
-class InformationFragment : Fragment() {
-    private lateinit var binding: FragmentInformationBinding
+class CategoryFragment : Fragment() {
+    private lateinit var binding: FragmentMallBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentInformationBinding.inflate(inflater, container, false)
+        binding = FragmentMallBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

@@ -2,9 +2,9 @@
     <string name="app_name">T1Mart</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home">Home</string>
-    <string name="mall">Mall</string>
-    <string name="information">User</string>
+    <string name="home">Trang chủ</string>
+    <string name="mall">Danh mục</string>
+    <string name="information">Tài khoản</string>
     <string name="hint_editText">Tìm thông tin sản phẩm</string>
     <string name="recyclerviewc_content">XảkhoNGON</string>
     <string name="rv2_textview_content">Rẻ mỗi ngày</string>

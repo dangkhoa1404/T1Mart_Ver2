@@ -7,7 +7,7 @@
     <item
         android:id="@+id/mall"
         android:title="@string/mall"
-        android:icon="@drawable/ic_mall"/>
+        android:icon="@drawable/ic_category"/>
     <item
         android:id="@+id/account"
         android:title="@string/information"
