@@ -15,6 +15,7 @@
         android:layout_gravity="center"
         android:background="@drawable/home_recyclerview1_custom"
         android:padding="@dimen/padmar_10"
+        android:scaleType="centerInside"
         android:src="@drawable/ic_sale" />
 
     <TextView

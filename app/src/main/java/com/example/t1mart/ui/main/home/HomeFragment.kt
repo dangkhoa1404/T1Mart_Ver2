@@ -41,13 +41,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setDataRecyclerView1()
-        setDataImageSlider()
-        setDataRecyclerView2()
-        setDataRecyclerView3()
+        setDataPromotion()
+        setDataSliderPromotion()
+        setDataCollection()
+        setDataGenuineBrand()
+        setDataCategories()
     }
 
-    private fun setDataRecyclerView1() {
+    private fun setDataPromotion() {
         imagePromotion = arrayOf(
             R.drawable.ic_clearance_sale,
             R.drawable.ic_market,
@@ -77,7 +78,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun setDataImageSlider() {
+    private fun setDataSliderPromotion() {
         binding.run {
             viewPager2 = vpCombo
             handler = Handler(Looper.myLooper()!!)
@@ -118,7 +119,7 @@ class HomeFragment : Fragment() {
         viewPager2.currentItem = viewPager2.currentItem + 1
     }
 
-    private fun setDataRecyclerView2() {
+    private fun setDataCollection() {
         imagePromotion = arrayOf(
             R.drawable.ic_rv2_coffeecan,
             R.drawable.ic_rv2_laptop,
@@ -147,7 +148,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setDataRecyclerView3() {
+    private fun setDataGenuineBrand() {
         imagePromotion = arrayOf(
             R.drawable.ic_rv3_img_logitech,
             R.drawable.ic_rv3_img_nhanam,
@@ -179,6 +180,39 @@ class HomeFragment : Fragment() {
         }
         binding.run {
             homeRecyclerview3.adapter = RecyclerView3Adapter(promotionArrayList)
+        }
+    }
+
+    private fun setDataCategories() {
+        imagePromotion = arrayOf(
+            R.drawable.ic_smartphone,
+            R.drawable.ic_laptop,
+            R.drawable.ic_fragrances,
+            R.drawable.ic_skincare,
+            R.drawable.ic_furniture,
+            R.drawable.ic_mens_shirts,
+            R.drawable.ic_womens_bags,
+            R.drawable.ic_womens_jewellery,
+            R.drawable.ic_sunglasses,
+        )
+        titlePromotion = arrayOf(
+            "Điện thoại",
+            "Laptop",
+            "Nước hoa",
+            "Chăm sóc da",
+            "Nội thất",
+            "Áo cho phái nam",
+            "Túi xách phái nữ",
+            "Trang sức",
+            "Kính mắt"
+        )
+        promotionArrayList = arrayListOf()
+        for (i in imagePromotion.indices) {
+            val promotion = T1mart(imagePromotion[i], titlePromotion[i], 0)
+            promotionArrayList.add(promotion)
+        }
+        binding.run {
+            homeRecyclerview4.adapter = RecyclerView1Adapter(promotionArrayList)
         }
     }
 
