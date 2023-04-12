@@ -12,4 +12,6 @@
     <string name="rv2_textview_title_2">Thương hiệu chính hãng</string>
     <string name="rv4_textview_categories">Mua sắm theo danh mục</string>
     <string name="rv4_textview_categories_2">Xem thêm</string>
+    <string name="text">ABC123</string>
+    <string name="rvListProduct_text">Danh mục các sản phẩm hiện có</string>
 </resources>

@@ -7,17 +7,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.t1mart.R
+import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.FragmentHomeBinding
-import com.example.t1mart.ui.main.home.adapter.RecyclerView1Adapter
-import com.example.t1mart.ui.main.home.adapter.RecyclerView2Adapter
-import com.example.t1mart.ui.main.home.adapter.RecyclerView3Adapter
-import com.example.t1mart.ui.main.home.adapter.ViewPagerAdapter
+import com.example.t1mart.ui.main.home.adapter.*
 import kotlin.math.abs
 
 class HomeFragment : Fragment() {
@@ -31,6 +30,9 @@ class HomeFragment : Fragment() {
     private lateinit var handler: Handler
     private lateinit var imageListCombo: ArrayList<Int>
     private lateinit var adapter: ViewPagerAdapter
+
+    private lateinit var viewModel :HomeViewModel
+    private var listProducts= mutableListOf<Products>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,11 +43,27 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this@HomeFragment)[HomeViewModel::class.java]
         setDataPromotion()
         setDataSliderPromotion()
         setDataCollection()
         setDataGenuineBrand()
         setDataCategories()
+        setDataListProducts()
+        viewModel.callDataListProducts()
+    }
+
+    private fun setDataListProducts() {
+        viewModel.dataListProducts.observe(viewLifecycleOwner) {
+            listProducts.run {
+                clear()
+                listProducts.addAll(it)
+            }
+            binding.run {
+                rvListProducts.adapter = HomeAdapter(listProducts)
+                rvListProducts.adapter?.notifyDataSetChanged()
+            }
+        }
     }
 
     private fun setDataPromotion() {
@@ -76,7 +94,6 @@ class HomeFragment : Fragment() {
             homeRecyclerview1.adapter = RecyclerView1Adapter(promotionArrayList)
         }
     }
-
 
     private fun setDataSliderPromotion() {
         binding.run {
