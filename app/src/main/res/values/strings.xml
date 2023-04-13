@@ -13,5 +13,6 @@
     <string name="rv4_textview_categories">Mua sắm theo danh mục</string>
     <string name="rv4_textview_categories_2">Xem thêm</string>
     <string name="text">ABC123</string>
+    <string name="contentCategory">Danh mục hàng hóa</string>
     <string name="rvListProduct_text">Danh mục các sản phẩm hiện có</string>
 </resources>

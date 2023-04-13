@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.main.category.CategoryFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padmar_65"
+        android:background="@drawable/strikethrough_bottom"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/padmar_10"
+        android:text="@string/contentCategory"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_24"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/padmar_10"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/list_categories_custom" />
+
+</LinearLayout>
