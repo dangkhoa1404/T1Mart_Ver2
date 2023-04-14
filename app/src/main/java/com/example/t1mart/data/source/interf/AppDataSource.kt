@@ -5,4 +5,5 @@ import retrofit2.Call
 
 interface AppDataSource {
     fun getAllProducts(): Call<ListProducts>
+    fun getAllProductsFromCategory(type: String): Call<ListProducts>
 }

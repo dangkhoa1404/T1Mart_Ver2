@@ -13,6 +13,10 @@ class RemoteDataSource : AppDataSource {
         return listProductsApi.getAllProducts()
     }
 
+    override fun getAllProductsFromCategory(type: String): Call<ListProducts> {
+        return listProductsApi.getAllProductsFromCategory(type)
+    }
+
     companion object {
         var listProductsApi: T1MartApi = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())

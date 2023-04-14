@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.ListCategoriesCustomBinding
 
-class CategoryAdapter(private val newCategory: ArrayList<T1mart>) :
+class CategoryAdapter(private val newCategory: ArrayList<T1mart>, private var onClick: (String) -> Unit) :
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -15,7 +15,13 @@ class CategoryAdapter(private val newCategory: ArrayList<T1mart>) :
             ListCategoriesCustomBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
-        )
+        ).apply {
+            itemView.setOnClickListener {
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    onClick.invoke(newCategory[adapterPosition].titleText)
+                }
+            }
+        }
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {

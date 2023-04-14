@@ -17,6 +17,7 @@ import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.FragmentHomeBinding
 import com.example.t1mart.ui.main.home.adapter.*
+import com.example.t1mart.util.AppConstant
 import kotlin.math.abs
 
 class HomeFragment : Fragment() {
@@ -77,13 +78,13 @@ class HomeFragment : Fragment() {
             R.drawable.ic_shopping,
         )
         titlePromotion = arrayOf(
-            "Xả kho",
-            "Đi chợ ngon",
-            "Ưu đãi",
-            "Mã giảm giá",
-            "Tài chính",
-            "Hàng giảm giá",
-            "Mua sắm thả ga"
+            AppConstant.PROMOTION_1,
+            AppConstant.PROMOTION_2,
+            AppConstant.PROMOTION_3,
+            AppConstant.PROMOTION_4,
+            AppConstant.PROMOTION_5,
+            AppConstant.PROMOTION_6,
+            AppConstant.PROMOTION_7
         )
         promotionArrayList = arrayListOf()
         for (i in imagePromotion.indices) {
@@ -147,13 +148,13 @@ class HomeFragment : Fragment() {
             R.drawable.ic_rv2_tv,
         )
         titlePromotion = arrayOf(
-            "Top bán chạy",
-            "Mua nhiều giảm sâu",
-            "Giao nhanh 2h",
-            "Mua 1 được 2",
-            "Chốt Deal Sale Hot",
-            "Top Deal tiêu dùng",
-            "Săn Deal HomeTech"
+            AppConstant.TOP_1,
+            AppConstant.TOP_2,
+            AppConstant.TOP_3,
+            AppConstant.TOP_4,
+            AppConstant.TOP_5,
+            AppConstant.TOP_6,
+            AppConstant.TOP_7
         )
         promotionArrayList = arrayListOf()
         for (i in imagePromotion.indices) {
@@ -175,12 +176,12 @@ class HomeFragment : Fragment() {
             R.drawable.ic_rv3_img_unilever
         )
         titlePromotion = arrayOf(
-            "Chuột phím sale đến 50%",
-            "Ưu đãi sách hot đến 50%",
-            "Mua Tivi giảm đến 50%",
-            "Thưởng thức Strongbow 4 vị",
-            "Giảm đến 50%",
-            "Bùng cháy triệu Deal",
+            AppConstant.SALE_1,
+            AppConstant.SALE_2,
+            AppConstant.SALE_3,
+            AppConstant.SALE_4,
+            AppConstant.SALE_5,
+            AppConstant.SALE_6
         )
         imageBrand = arrayOf(
             R.drawable.ic_rv3_logo_logitech,
@@ -213,15 +214,15 @@ class HomeFragment : Fragment() {
             R.drawable.ic_sunglasses,
         )
         titlePromotion = arrayOf(
-            "Điện thoại",
-            "Laptop",
-            "Nước hoa",
-            "Chăm sóc da",
-            "Nội thất",
-            "Áo cho phái nam",
-            "Túi xách phái nữ",
-            "Trang sức",
-            "Kính mắt"
+            AppConstant.TITLE_NAME_CATEGORY_1,
+            AppConstant.TITLE_NAME_CATEGORY_2,
+            AppConstant.TITLE_NAME_CATEGORY_3,
+            AppConstant.TITLE_NAME_CATEGORY_4,
+            AppConstant.TITLE_NAME_CATEGORY_7,
+            AppConstant.TITLE_NAME_CATEGORY_11,
+            AppConstant.TITLE_NAME_CATEGORY_15,
+            AppConstant.TITLE_NAME_CATEGORY_16,
+            AppConstant.TITLE_NAME_CATEGORY_17
         )
         promotionArrayList = arrayListOf()
         for (i in imagePromotion.indices) {
