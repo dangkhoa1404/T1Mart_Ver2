@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.home.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/llSearchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padmar_20">
+
+        <EditText
+            android:id="@+id/edtSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/imgCart"
+            android:background="@drawable/edittext_custom"
+            android:drawableStart="@drawable/ic_search"
+            android:hint="@string/hint_editText"
+            android:inputType="none"
+            android:paddingHorizontal="@dimen/padmar_15"
+            android:paddingVertical="@dimen/size_10"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/imgCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padmar_10"
+            android:src="@drawable/ic_cart" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/svMart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_scrollView"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeRecyclerview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/homefragment_recyclerview_1_custom" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpCombo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_200"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/padmar_30"
+                android:paddingVertical="@dimen/padmar_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/padmar_15">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padmar_10"
+                    android:text="@string/rv2_textview_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_20"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/homefragment_recyclerview_2_custom" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@drawable/home_recyclerview3_custom"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/padmar_15">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padmar_10"
+                    android:text="@string/rv2_textview_title_2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_20"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/homefragment_recyclerview_3_custom" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/padmar_15">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/padmar_10"
+                        android:gravity="center_vertical"
+                        android:text="@string/rv4_textview_categories"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_20"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/padmar_10"
+                        android:gravity="center_vertical"
+                        android:text="@string/rv4_textview_categories_2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_14"
+                        app:drawableRightCompat="@drawable/img_arrow" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecyclerview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/homefragment_recyclerview_1_custom" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@color/white"
+                android:src="@drawable/img_combo_clothing" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/padmar_10"
+                android:weightSum="3">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/padmar_5"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_brand2" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/img_stroke_brand"
+                    android:paddingHorizontal="@dimen/padmar_5"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_brand1" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/padmar_5"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_brand3" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padmar_15"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/padmar_15">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padmar_10"
+                    android:text="@string/rvListProduct_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_20"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvListProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/list_products_custom" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

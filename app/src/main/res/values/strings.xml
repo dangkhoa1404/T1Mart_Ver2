@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">T1Mart</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Trang chủ</string>
+    <string name="mall">Danh mục</string>
+    <string name="information">Tài khoản</string>
+    <string name="hint_editText">Tìm thông tin sản phẩm</string>
+    <string name="recyclerviewc_content">XảkhoNGON</string>
+    <string name="rv2_textview_content">Rẻ mỗi ngày</string>
+    <string name="rv2_textview_title">Bộ Sưu tập nổi bật</string>
+    <string name="rv2_textview_title_2">Thương hiệu chính hãng</string>
+    <string name="rv4_textview_categories">Mua sắm theo danh mục</string>
+    <string name="rv4_textview_categories_2">Xem thêm</string>
+    <string name="text">ABC123</string>
+    <string name="productInformation">Thông tin sản phẩm</string>
+    <string name="contentCategory">Danh mục hàng hóa</string>
+    <string name="rvListProduct_text">Danh mục các sản phẩm hiện có</string>
+    <string name="productDetail">Thông tin thêm:</string>
+    <string name="review">đánh giá</string>
+    <string name="rating">xếp hạng</string>
+    <string name="personalRating">5</string>
+    <string name="dauGach">/</string>
+    <string name="sale">Giảm đến: </string>
+    <string name="percent">%</string>
+</resources>

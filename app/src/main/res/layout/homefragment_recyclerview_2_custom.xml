@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="@dimen/layout_150"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginHorizontal="@dimen/padmar_5"
+    android:layout_marginVertical="@dimen/padmar_10"
+    android:background="@drawable/home_recyclerview2_custom"
+    android:orientation="vertical">
+
+    <ImageView
+        android:padding="@dimen/padmar_5"
+        android:id="@+id/imgProduct"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_150"
+        android:gravity="center_vertical|center_horizontal"
+        android:src="@drawable/ic_rv2_coffeecan"
+        android:scaleType="centerInside"/>
+
+    <TextView
+        android:id="@+id/tvDesProduct"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padmar_65"
+        android:background="@drawable/home_recyclerview2_textview_custom"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/recyclerviewc_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_18" />
+
+    <TextView
+        android:layout_width="@dimen/padmar_90"
+        android:layout_height="@dimen/padmar_20"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padmar_a75"
+        android:background="@drawable/home_recyclerview2_textview_2_custom"
+        android:baselineAligned="false"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/rv2_textview_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12"
+        android:textStyle="bold" />
+</LinearLayout>
