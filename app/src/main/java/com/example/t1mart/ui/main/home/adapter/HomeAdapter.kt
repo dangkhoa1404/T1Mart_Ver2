@@ -8,7 +8,7 @@ import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.databinding.ListProductsCustomBinding
 import kotlin.math.roundToInt
 
-class HomeAdapter(private val listProducts: List<Products>) :
+class HomeAdapter(private val listProducts: List<Products>, private var onClick: (String) -> Unit) :
     RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -16,7 +16,13 @@ class HomeAdapter(private val listProducts: List<Products>) :
             ListProductsCustomBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
-        )
+        ).apply {
+            itemView.setOnClickListener {
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    onClick.invoke(listProducts[adapterPosition].id.toString())
+                }
+            }
+        }
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -37,8 +43,8 @@ class HomeAdapter(private val listProducts: List<Products>) :
                     tvCategoryProduct.text = category
                     tvPriceProduct.text = price.toString()
                     tvRatingProduct.text = rating.toString()
-                    val salePrice: Double = price * 1.0 * (100.0 - discountPercentage)
-                    val salePrice2Digit: Double = salePrice.roundToInt() / 100.0
+                    val salePrice2Digit: Double =
+                        (price * 1.0 * (100.0 - discountPercentage)).roundToInt() / 100.0
                     tvSalePriceProduct.text = salePrice2Digit.toString()
                 }
             }

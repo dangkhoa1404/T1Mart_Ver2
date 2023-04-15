@@ -2,6 +2,7 @@ package com.example.t1mart.data.source.remote
 
 import com.example.t1mart.data.network.T1MartApi
 import com.example.t1mart.data.network.response.ListProducts
+import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.data.source.interf.AppDataSource
 import com.example.t1mart.util.AppConstant
 import retrofit2.Call
@@ -15,6 +16,10 @@ class RemoteDataSource : AppDataSource {
 
     override fun getAllProductsFromCategory(type: String): Call<ListProducts> {
         return listProductsApi.getAllProductsFromCategory(type)
+    }
+
+    override fun getProductFromID(id: String): Call<Products> {
+        return listProductsApi.getProductFromID(id)
     }
 
     companion object {

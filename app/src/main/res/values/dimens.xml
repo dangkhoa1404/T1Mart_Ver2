@@ -2,9 +2,11 @@
 <resources>
     <!--    layout width height-->
     <dimen name="layout_10">10dp</dimen>
+    <dimen name="layout_20">20dp</dimen>
     <dimen name="layout_100">100dp</dimen>
     <dimen name="layout_150">150dp</dimen>
     <dimen name="layout_200">200dp</dimen>
+    <dimen name="layout_300">300dp</dimen>
     <dimen name="layout_400">400dp</dimen>
 
     <!--    padding, margin-->
@@ -22,6 +24,7 @@
     <dimen name="padmar_65">65dp</dimen>
     <dimen name="padmar_70">70dp</dimen>
     <dimen name="padmar_90">90dp</dimen>
+    <dimen name="padmar_100">100dp</dimen>
 
     <!-- stroke Edit Text-->
     <dimen name="size_0.5">0.5dp</dimen>

@@ -6,25 +6,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.HomefragmentRecyclerview1CustomBinding
-import com.example.t1mart.databinding.HomefragmentRecyclerview2CustomBinding
-import com.example.t1mart.util.AppConstant
 
-class RecyclerView2Adapter(
+class CategoryAdapter(
     private val newPromotion: ArrayList<T1mart>,
     private var onClick: (String) -> Unit
 ) :
-    RecyclerView.Adapter<RecyclerView2Adapter.MyViewHolder>() {
+    RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            HomefragmentRecyclerview2CustomBinding.inflate(
+            HomefragmentRecyclerview1CustomBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         ).apply {
             itemView.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) {
-                    val randomNumber = (1..100).random()
-                    onClick.invoke(randomNumber.toString())
+                    onClick.invoke(newPromotion[adapterPosition].titleText)
                 }
             }
         }
@@ -38,12 +35,12 @@ class RecyclerView2Adapter(
         return newPromotion.size
     }
 
-    class MyViewHolder(private val binding: HomefragmentRecyclerview2CustomBinding) :
+    class MyViewHolder(private val binding: HomefragmentRecyclerview1CustomBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(t1mart: T1mart) {
             binding.run {
-                tvDesProduct.text = t1mart.titleText
-                Glide.with(itemView.context).load(t1mart.titleImage).into(imgProduct)
+                tvIconMarket.text = t1mart.titleText
+                Glide.with(itemView.context).load(t1mart.titleImage).into(imgIconMarket)
             }
         }
     }

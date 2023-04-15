@@ -22,6 +22,8 @@
         android:layout_width="@dimen/layout_100"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/padmar_5"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="@string/text"
         android:textAlignment="center"
         android:textColor="@color/black"

@@ -1,10 +1,12 @@
 package com.example.t1mart.ui.categoryproducts
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.databinding.ActivityCategoryProductsBinding
+import com.example.t1mart.ui.productinformation.ProductInformationActivity
 import com.example.t1mart.util.AppConstant
 
 class CategoryProductsActivity : AppCompatActivity() {
@@ -27,7 +29,7 @@ class CategoryProductsActivity : AppCompatActivity() {
     }
 
     private fun setEventListener() {
-        binding.imgBack.setOnClickListener{
+        binding.imgBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
     }
@@ -67,7 +69,14 @@ class CategoryProductsActivity : AppCompatActivity() {
                 listProducts.addAll(it)
             }
             binding.run {
-                rvListProducts.adapter = CategoryProductsAdapter(listProducts)
+                rvListProducts.adapter = CategoryProductsAdapter(listProducts) {
+                    val intent = Intent(
+                        this@CategoryProductsActivity,
+                        ProductInformationActivity::class.java
+                    )
+                    intent.putExtra(AppConstant.ID_CATEGORY, it)
+                    startActivity(intent)
+                }
                 rvListProducts.adapter?.notifyDataSetChanged()
             }
         }

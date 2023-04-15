@@ -82,7 +82,7 @@ class CategoryFragment : Fragment() {
         }
         binding.run {
             rvListCategories.adapter = CategoryAdapter(categoryArrayList) {
-                val intent =Intent(requireContext(), CategoryProductsActivity::class.java)
+                val intent = Intent(requireContext(), CategoryProductsActivity::class.java)
                 intent.putExtra(AppConstant.NAME_CATEGORY, it)
                 startActivity(intent)
             }

@@ -18,4 +18,6 @@
     <color name="home_rv3_color1">#dfe7fc</color>
     <color name="home_rv3_color2">#CBDAFF</color>
     <color name="borderBottom">#f3f3f3</color>
+    <color name="text">#494949</color>
+    <color name="bestSeller">#00aa07</color>
 </resources>

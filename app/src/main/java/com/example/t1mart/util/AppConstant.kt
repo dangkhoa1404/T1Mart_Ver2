@@ -3,6 +3,7 @@ package com.example.t1mart.util
 object AppConstant {
     const val LIST_PRODUCTS = "https://dummyjson.com/"
     const val NAME_CATEGORY = "category_passed"
+    const val ID_CATEGORY = "id_category_passed"
     const val NAME_CATEGORY_1 = "smartphones"
     const val NAME_CATEGORY_2 = "laptops"
     const val NAME_CATEGORY_3 = "fragrances"
@@ -40,7 +41,7 @@ object AppConstant {
     const val TITLE_NAME_CATEGORY_14 = "Đồng hồ nữ"
     const val TITLE_NAME_CATEGORY_15 = "Túi xách nữ"
     const val TITLE_NAME_CATEGORY_16 = "Trang sức"
-    const val TITLE_NAME_CATEGORY_17 = "Mắt kinh"
+    const val TITLE_NAME_CATEGORY_17 = "Mắt kính"
     const val TITLE_NAME_CATEGORY_18 = "Đồ điện tử"
     const val TITLE_NAME_CATEGORY_19 = "Xe máy"
     const val TITLE_NAME_CATEGORY_20 = "Đèn điện"

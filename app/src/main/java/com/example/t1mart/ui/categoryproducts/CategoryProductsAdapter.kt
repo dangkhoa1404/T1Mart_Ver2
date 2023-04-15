@@ -8,7 +8,7 @@ import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.databinding.ListProductsCustomBinding
 import kotlin.math.roundToInt
 
-class CategoryProductsAdapter(private val listProducts: List<Products>) :
+class CategoryProductsAdapter(private val listProducts: List<Products>, private var onClick: (String) -> Unit) :
     RecyclerView.Adapter<CategoryProductsAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -16,7 +16,13 @@ class CategoryProductsAdapter(private val listProducts: List<Products>) :
             ListProductsCustomBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
-        )
+        ).apply {
+            itemView.setOnClickListener {
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    onClick.invoke(listProducts[adapterPosition].id.toString())
+                }
+            }
+        }
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {

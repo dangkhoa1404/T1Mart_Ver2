@@ -13,6 +13,14 @@
     <string name="rv4_textview_categories">Mua sắm theo danh mục</string>
     <string name="rv4_textview_categories_2">Xem thêm</string>
     <string name="text">ABC123</string>
+    <string name="productInformation">Thông tin sản phẩm</string>
     <string name="contentCategory">Danh mục hàng hóa</string>
     <string name="rvListProduct_text">Danh mục các sản phẩm hiện có</string>
+    <string name="productDetail">Thông tin thêm:</string>
+    <string name="review">đánh giá</string>
+    <string name="rating">xếp hạng</string>
+    <string name="personalRating">5</string>
+    <string name="dauGach">/</string>
+    <string name="sale">Giảm đến: </string>
+    <string name="percent">%</string>
 </resources>

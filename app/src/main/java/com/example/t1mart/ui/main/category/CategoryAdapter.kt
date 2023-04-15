@@ -7,7 +7,10 @@ import com.bumptech.glide.Glide
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.ListCategoriesCustomBinding
 
-class CategoryAdapter(private val newCategory: ArrayList<T1mart>, private var onClick: (String) -> Unit) :
+class CategoryAdapter(
+    private val newCategory: ArrayList<T1mart>,
+    private var onClick: (String) -> Unit
+) :
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

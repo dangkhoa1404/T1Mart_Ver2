@@ -1,5 +1,6 @@
 package com.example.t1mart.ui.main.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,7 +17,9 @@ import com.example.t1mart.R
 import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.data.network.response.T1mart
 import com.example.t1mart.databinding.FragmentHomeBinding
+import com.example.t1mart.ui.categoryproducts.CategoryProductsActivity
 import com.example.t1mart.ui.main.home.adapter.*
+import com.example.t1mart.ui.productinformation.ProductInformationActivity
 import com.example.t1mart.util.AppConstant
 import kotlin.math.abs
 
@@ -32,8 +35,8 @@ class HomeFragment : Fragment() {
     private lateinit var imageListCombo: ArrayList<Int>
     private lateinit var adapter: ViewPagerAdapter
 
-    private lateinit var viewModel :HomeViewModel
-    private var listProducts= mutableListOf<Products>()
+    private lateinit var viewModel: HomeViewModel
+    private var listProducts = mutableListOf<Products>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,7 +64,11 @@ class HomeFragment : Fragment() {
                 listProducts.addAll(it)
             }
             binding.run {
-                rvListProducts.adapter = HomeAdapter(listProducts)
+                rvListProducts.adapter = HomeAdapter(listProducts) {
+                    val intent = Intent(requireContext(), ProductInformationActivity::class.java)
+                    intent.putExtra(AppConstant.ID_CATEGORY, it)
+                    startActivity(intent)
+                }
                 rvListProducts.adapter?.notifyDataSetChanged()
             }
         }
@@ -162,7 +169,11 @@ class HomeFragment : Fragment() {
             promotionArrayList.add(promotion)
         }
         binding.run {
-            homeRecyclerview2.adapter = RecyclerView2Adapter(promotionArrayList)
+            homeRecyclerview2.adapter = RecyclerView2Adapter(promotionArrayList) {
+                val intent = Intent(requireContext(), ProductInformationActivity::class.java)
+                intent.putExtra(AppConstant.ID_CATEGORY, it)
+                startActivity(intent)
+            }
         }
     }
 
@@ -197,7 +208,11 @@ class HomeFragment : Fragment() {
             promotionArrayList.add(promotion)
         }
         binding.run {
-            homeRecyclerview3.adapter = RecyclerView3Adapter(promotionArrayList)
+            homeRecyclerview3.adapter = RecyclerView3Adapter(promotionArrayList) {
+                val intent = Intent(requireContext(), CategoryProductsActivity::class.java)
+                intent.putExtra(AppConstant.NAME_CATEGORY, it)
+                startActivity(intent)
+            }
         }
     }
 
@@ -214,15 +229,15 @@ class HomeFragment : Fragment() {
             R.drawable.ic_sunglasses,
         )
         titlePromotion = arrayOf(
-            AppConstant.TITLE_NAME_CATEGORY_1,
-            AppConstant.TITLE_NAME_CATEGORY_2,
-            AppConstant.TITLE_NAME_CATEGORY_3,
-            AppConstant.TITLE_NAME_CATEGORY_4,
-            AppConstant.TITLE_NAME_CATEGORY_7,
-            AppConstant.TITLE_NAME_CATEGORY_11,
-            AppConstant.TITLE_NAME_CATEGORY_15,
-            AppConstant.TITLE_NAME_CATEGORY_16,
-            AppConstant.TITLE_NAME_CATEGORY_17
+            AppConstant.NAME_CATEGORY_1,
+            AppConstant.NAME_CATEGORY_2,
+            AppConstant.NAME_CATEGORY_3,
+            AppConstant.NAME_CATEGORY_4,
+            AppConstant.NAME_CATEGORY_7,
+            AppConstant.NAME_CATEGORY_11,
+            AppConstant.NAME_CATEGORY_15,
+            AppConstant.NAME_CATEGORY_16,
+            AppConstant.NAME_CATEGORY_17
         )
         promotionArrayList = arrayListOf()
         for (i in imagePromotion.indices) {
@@ -230,7 +245,11 @@ class HomeFragment : Fragment() {
             promotionArrayList.add(promotion)
         }
         binding.run {
-            homeRecyclerview4.adapter = RecyclerView1Adapter(promotionArrayList)
+            homeRecyclerview4.adapter = CategoryAdapter(promotionArrayList) {
+                val intent = Intent(requireContext(), CategoryProductsActivity::class.java)
+                intent.putExtra(AppConstant.NAME_CATEGORY, it)
+                startActivity(intent)
+            }
         }
     }
 
