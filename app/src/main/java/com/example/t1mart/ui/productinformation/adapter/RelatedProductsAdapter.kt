@@ -1,4 +1,4 @@
-package com.example.t1mart.ui.categoryproducts
+package com.example.t1mart.ui.productinformation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,11 +8,11 @@ import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.databinding.ListProductsCustomBinding
 import kotlin.math.roundToInt
 
-class CategoryProductsAdapter(
+class RelatedProductsAdapter(
     private val listProducts: List<Products>,
     private var onClick: (String) -> Unit
 ) :
-    RecyclerView.Adapter<CategoryProductsAdapter.MyViewHolder>() {
+    RecyclerView.Adapter<RelatedProductsAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(

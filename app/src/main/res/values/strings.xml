@@ -29,4 +29,10 @@
     <string name="text_2">1</string>
     <string name="text_3">MART</string>
     <string name="version">v2.0</string>
+
+    <!--    buttom-->
+    <string name="addtocart">Thêm vào giỏ</string>
+    <string name="buynow">Mua ngay</string>
+    <string name="relatedProducts">Các sản phẩm liên quan</string>
+    <string name="seemore">Xem thêm</string>
 </resources>

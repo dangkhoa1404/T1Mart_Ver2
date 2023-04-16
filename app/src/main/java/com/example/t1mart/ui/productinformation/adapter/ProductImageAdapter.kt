@@ -1,4 +1,4 @@
-package com.example.t1mart.ui.productinformation
+package com.example.t1mart.ui.productinformation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

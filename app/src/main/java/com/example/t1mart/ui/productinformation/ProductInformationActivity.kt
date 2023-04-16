@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.t1mart.data.network.response.Products
 import com.example.t1mart.databinding.ActivityProductInformationBinding
+import com.example.t1mart.ui.productinformation.adapter.ProductImageAdapter
+import com.example.t1mart.ui.productinformation.adapter.RelatedProductsAdapter
 import com.example.t1mart.util.AppConstant
 import kotlin.math.roundToInt
 
@@ -13,6 +16,7 @@ class ProductInformationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductInformationBinding
 
     private lateinit var viewModel: ProductInformationViewModel
+    private var listProducts = mutableListOf<Products>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +26,24 @@ class ProductInformationActivity : AppCompatActivity() {
             ViewModelProvider(this@ProductInformationActivity)[ProductInformationViewModel::class.java]
         idProduct = intent.getStringExtra(AppConstant.ID_CATEGORY) as String
         setDataProduct()
+        setDataRelatedProducts()
         setEventListener()
         viewModel.getProductFromID(idProduct)
+    }
+
+    private fun setDataRelatedProducts() {
+        viewModel.dataListProducts.observe(this) {
+            listProducts.run {
+                clear()
+                listProducts.addAll(it)
+            }
+            binding.run {
+                rvListProducts.adapter = RelatedProductsAdapter(listProducts) {
+                    viewModel.getProductFromID(it)
+                }
+                rvListProducts.adapter?.notifyDataSetChanged()
+            }
+        }
     }
 
     private fun setDataProduct() {
@@ -46,6 +66,8 @@ class ProductInformationActivity : AppCompatActivity() {
 
                     rvProductImage.adapter = images?.let { it1 -> ProductImageAdapter(it1) }
                     rvProductImage.adapter?.notifyDataSetChanged()
+
+                    category?.let { it1 -> viewModel.getRelatedProducts(it1) }
                 }
             }
         }
