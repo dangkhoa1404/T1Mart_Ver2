@@ -21,7 +21,7 @@ class CategoryAdapter(
         ).apply {
             itemView.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) {
-                    onClick.invoke(newPromotion[adapterPosition].titleText)
+                    newPromotion[adapterPosition].titleText?.let { it1 -> onClick.invoke(it1) }
                 }
             }
         }

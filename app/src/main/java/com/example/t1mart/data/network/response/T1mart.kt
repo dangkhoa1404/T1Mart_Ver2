@@ -3,9 +3,9 @@ package com.example.t1mart.data.network.response
 import com.google.gson.annotations.SerializedName
 
 data class T1mart(
-    var titleImage: Int,
-    var titleText: String,
-    var titleBrand: Int
+    var titleImage: Int?,
+    var titleText: String?,
+    var titleBrand: Int?
 )
 
 data class ListProducts(

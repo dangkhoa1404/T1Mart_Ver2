@@ -20,4 +20,5 @@
     <color name="borderBottom">#f3f3f3</color>
     <color name="text">#494949</color>
     <color name="bestSeller">#00aa07</color>
+    <color name="dust">#a8a8a8</color>
 </resources>

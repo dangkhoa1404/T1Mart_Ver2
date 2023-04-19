@@ -35,4 +35,18 @@
     <string name="buynow">Mua ngay</string>
     <string name="relatedProducts">Các sản phẩm liên quan</string>
     <string name="seemore">Xem thêm</string>
+
+    <!--    sign in/ sign up-->
+    <string name="title_signin">Đăng nhập</string>
+    <string name="title_signup">Đăng ký</string>
+    <string name="title_havenoacc">Chưa có tài khoản?</string>
+    <string name="title_haveacc">Đã có tài khoản?</string>
+    <string name="signin">Đăng nhập ngay</string>
+    <string name="signup">Đăng ký ngay</string>
+    <string name="another_signin">Hoặc đăng nhập bằng</string>
+    <string name="another_signup">Hoặc đăng ký bằng</string>
+    <string name="edt_phone_signin">Nhập số điện thoại</string>
+    <string name="edt_name">Nhập tên (Bắt buộc)</string>
+    <string name="edt_phone">Nhập số điện thoại (Bắt buộc)</string>
+    <string name="edt_address">Nhập địa chỉ nhận hàng</string>
 </resources>
